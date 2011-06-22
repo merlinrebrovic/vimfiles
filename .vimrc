@@ -21,10 +21,10 @@ set smartcase " ... but only if there is no uppercase letters
 set showmatch " quickly jump cursor to matching bracket
 
 " wrapped lines
-" set wrap
-" set textwidth= 78
+"set wrap
+"set textwidth= 78
 set linebreak " won't split a word
-" set list " will show hidden characters
+"set list " will show hidden characters
 
 set encoding=utf-8
 colorscheme phd
@@ -59,5 +59,9 @@ au BufNewFile,BufRead *.j2 setf htmljinja
 " GUI options
 set guioptions-=m " remove menu bar
 set guioptions-=T " remove toolbar
-set lines=40
-set columns=84 " 80 + 4 lines that 'numbers' uses
+set guifont=Monospace\ 12
+
+" this is tricy because it resizes the window when 
+" Vim is started from a terminal
+"set lines=40
+"set columns=84 " 80 + 4 lines that 'numbers' uses
