@@ -51,7 +51,8 @@ nnoremap <C-N> :bnext<Cr>
 " add '(x)' at the beginning of the todo's line
 map <F2> 0xxxi(+)<Esc>j0
 " run a spellchecker
-map <F3> :set spell<Cr>
+map <F3> :call SetSpell()<Cr>
+map <F4> :call SetFoldMethod()<Cr>
 
 " my filetypes
 au BufNewFile,BufRead *.j2 setf htmljinja
@@ -65,3 +66,23 @@ set guifont=Monospace\ 12
 " Vim is started from a terminal
 "set lines=40
 "set columns=84 " 80 + 4 lines that 'numbers' uses
+
+function SetSpell()
+    if &spell
+        set nospell
+        echo "No spell checking"
+    else
+        set spell
+        echo "Spell checking"
+    endif
+endfunction
+
+function SetFoldMethod()
+    if &foldmethod == "manual"
+        set foldmethod=indent
+        echo "Foldmethod: indent"
+    else
+        set foldmethod=manual
+        echo "Foldmethod: manual"
+    endif
+endfunction
