@@ -26,7 +26,9 @@ set linebreak " won't split a word
 "set list " will show hidden characters
 
 set encoding=utf-8
-colorscheme phd
+set t_Co=256
+colorscheme ir_black
+"colorscheme phd
 set number
 set title " show title
 set showcmd
