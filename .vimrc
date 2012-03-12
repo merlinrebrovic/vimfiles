@@ -31,15 +31,14 @@ set linebreak " won't split a word
 set encoding=utf-8
 set t_Co=256
 colorscheme ir_black
-"colorscheme phd
 set number
-set title " show title
+set title
 set showcmd
 
 let mapleader = ","
 nnoremap <silent> <Leader><Space> :noh<Cr>
 inoremap jj <Esc>
-" save file with Ctrl+S
+" save file with Ctrl+S in GUI
 nmap <C-S> :w<Cr>
 
 " most common vertical movement in wrapped lines
@@ -62,14 +61,13 @@ map <F4> :call SetFoldMethod()<Cr>
 au BufNewFile,BufRead *.j2 setf htmljinja
 
 " GUI options
-set guioptions-=m " remove menu bar
-set guioptions-=T " remove toolbar
-set guifont=Monospace\ 12
-
-" this is tricy because it resizes the window when 
-" Vim is started from a terminal
-"set lines=40
-"set columns=84 " 80 + 4 lines that 'numbers' uses
+if has("gui_running")
+    set lines=40
+    set columns=84 " 80 + 4 lines that 'numbers' uses
+    set guifont=Monospace\ 12
+    set guioptions-=m " remove menu bar
+    set guioptions-=T " remove toolbar
+endif
 
 function SetSpell()
     if &spell
