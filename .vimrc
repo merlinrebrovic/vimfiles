@@ -37,6 +37,7 @@ set showcmd
 
 let mapleader = ","
 nnoremap <silent> <Leader><Space> :noh<Cr>
+nnoremap <Leader>f :CtrlP<Cr>
 inoremap jj <Esc>
 " save file with Ctrl+S in GUI
 nmap <C-S> :w<Cr>
