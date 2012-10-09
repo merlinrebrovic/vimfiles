@@ -39,8 +39,8 @@ let mapleader = ","
 nnoremap <silent> <Leader><Space> :noh<Cr>
 nnoremap <Leader>f :CtrlP<Cr>
 inoremap jj <Esc>
-" save file with Ctrl+S in GUI
-nmap <C-S> :w<Cr>
+" save file
+nnoremap <Leader>s :w<Cr>
 
 " most common vertical movement in wrapped lines
 " for other commands, prepend 'g' ex. g$
