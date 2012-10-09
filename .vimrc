@@ -70,7 +70,7 @@ if has("gui_running")
     set guioptions-=T " remove toolbar
 endif
 
-function SetSpell()
+function! SetSpell()
     if &spell
         set nospell
         echo "No spell checking"
@@ -80,7 +80,7 @@ function SetSpell()
     endif
 endfunction
 
-function SetFoldMethod()
+function! SetFoldMethod()
     if &foldmethod == "manual"
         set foldmethod=indent
         echo "Foldmethod: indent"
