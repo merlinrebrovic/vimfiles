@@ -22,11 +22,7 @@ set ignorecase " ignore case ...
 set smartcase " ... but only if there is no uppercase letters
 set showmatch " quickly jump cursor to matching bracket
 
-" wrapped lines
-"set wrap
-"set textwidth= 78
 set linebreak " won't split a word
-"set list " will show hidden characters
 
 set encoding=utf-8
 set t_Co=256
