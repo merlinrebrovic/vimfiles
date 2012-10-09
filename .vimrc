@@ -53,10 +53,10 @@ vnoremap k gk
 nnoremap <C-N> :bnext<Cr>
 
 " add '(x)' at the beginning of the todo's line
-map <F2> 0xxxi(+)<Esc>j0
+nnoremap <F2> 0xxxi(+)<Esc>j0
 " run a spellchecker
-map <F3> :call SetSpell()<Cr>
-map <F4> :call SetFoldMethod()<Cr>
+nnoremap <F3> :call SetSpell()<Cr>
+nnoremap <F4> :call SetFoldMethod()<Cr>
 
 " my filetypes
 au BufNewFile,BufRead *.j2 setf htmljinja
