@@ -53,7 +53,7 @@ nnoremap <F2> 0xxxi(+)<Esc>j0
 " run a spellchecker
 nnoremap <F3> :call SetSpell()<Cr>
 nnoremap <F4> :call SetFoldMethod()<Cr>
-nnoremap <F5> :call ToggleFocusMode(80)<Cr>
+nnoremap <leader>m :call ToggleFocusMode()<Cr>
 
 " my filetypes
 au BufNewFile,BufRead *.j2 setf htmljinja
