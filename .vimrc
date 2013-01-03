@@ -55,6 +55,11 @@ nnoremap <F3> :call SetSpell()<Cr>
 nnoremap <F4> :call SetFoldMethod()<Cr>
 nnoremap <leader>m :call ToggleFocusMode()<Cr>
 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>v :source $MYVIMRC<cr>
+" easy copy to clipboard from Vim
+vnoremap Y "+y
+
 " my filetypes
 au BufNewFile,BufRead *.j2 setf htmljinja
 
