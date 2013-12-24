@@ -33,7 +33,7 @@ set showcmd
 
 let mapleader = ","
 nnoremap <silent> <Leader><Space> :noh<Cr>
-nnoremap <Leader>f :CtrlP<Cr>
+nnoremap <Leader>c :CtrlP<Cr>
 inoremap jj <Esc>
 " save file
 nnoremap <Leader>s :w<Cr>
@@ -53,7 +53,7 @@ nnoremap <F2> 0xxxi(+)<Esc>j0
 " run a spellchecker
 nnoremap <F3> :call SetSpell()<Cr>
 nnoremap <F4> :call SetFoldMethod()<Cr>
-nnoremap <leader>m :call ToggleFocusMode()<Cr>
+nmap <leader>m <Plug>FocusModeToggle
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>v :source $MYVIMRC<cr>
