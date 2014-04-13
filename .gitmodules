@@ -18,7 +18,7 @@
 	url = git://github.com/kien/ctrlp.vim.git
 [submodule "bundle/focus"]
 	path = bundle/focus
-	url = git@github.com:merlinrebrovic/focus.vim.git
+	url = git://github.com/merlinrebrovic/focus.vim.git
 [submodule "bundle/html_annoyance"]
 	path = bundle/html_annoyance
 	url = git://github.com/tudorprodan/html_annoyance.vim.git

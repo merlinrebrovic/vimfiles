@@ -2,8 +2,7 @@
 runtime bundle/pathogen/autoload/pathogen.vim
 
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 filetype plugin indent on
 
 " default swap file location
