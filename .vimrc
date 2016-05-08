@@ -47,8 +47,7 @@ vnoremap k gk
 " buffers
 nnoremap <C-N> :bnext<Cr>
 
-" add '(x)' at the beginning of the todo's line
-nnoremap <F2> 0xxxi(+)<Esc>j0
+nnoremap <F2> :call BlogPost()<Cr>
 " run a spellchecker
 nnoremap <F3> :call SetSpell()<Cr>
 nnoremap <F4> :call SetFoldMethod()<Cr>
@@ -70,6 +69,14 @@ if has("gui_running")
     set guioptions-=m " remove menu bar
     set guioptions-=T " remove toolbar
 endif
+
+function! BlogPost()
+    set ft=markdown
+    set tw=62
+    %s/“/"/ge
+    %s/”/"/ge
+    %s/’/'/ge
+endfunction
 
 function! SetSpell()
     if &spell
