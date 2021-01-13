@@ -53,6 +53,9 @@ nnoremap <F3> :call SetSpell()<Cr>
 nnoremap <F4> :call SetFoldMethod()<Cr>
 nmap <leader>m <Plug>FocusModeToggle
 
+" Knowledge Base (KB) function calls
+nnoremap <leader>g :call KBOpenId()<Cr>
+
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>v :source $MYVIMRC<cr>
 " easy copy to clipboard from Vim
@@ -97,3 +100,17 @@ function! SetFoldMethod()
         echo "Foldmethod: manual"
     endif
 endfunction
+
+" All KB functions assume one is in the right KB folder
+function! KBOpenId()
+    let note_id = matchstr(getline('.'), '[0-9]\{14}')
+    if note_id == ""
+        echo "No ID found"
+    else
+        let filename = system("find . -name '*".note_id.".md'")
+        execute "edit ".filename
+    endif
+endfunction
+
+"a hint for future KB functions
+"let note_id = expand("<cword>")
