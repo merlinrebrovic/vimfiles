@@ -14,7 +14,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" search
+" buffer search
 set hls " highlight search
 set incsearch " incremental search
 set ignorecase " ignore case ...
