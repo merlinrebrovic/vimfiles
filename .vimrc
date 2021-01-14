@@ -54,7 +54,7 @@ nnoremap <F4> :call SetFoldMethod()<Cr>
 nmap <leader>m <Plug>FocusModeToggle
 
 " Knowledge Base (KB) function calls
-nnoremap <leader>g :call KBOpenId()<Cr>
+nnoremap <leader>g :call KBFollowLink()<Cr>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>v :source $MYVIMRC<cr>
@@ -102,15 +102,20 @@ function! SetFoldMethod()
 endfunction
 
 " All KB functions assume one is in the right KB folder
-function! KBOpenId()
-    let note_id = matchstr(getline('.'), '[0-9]\{14}')
-    if note_id == ""
-        echo "No ID found"
-    else
+function! KBFollowLink()
+    " search for a 14-digit ID in the current line
+    let note_id = matchstr(getline('.'), '\d\{14}')
+    if note_id != ""
         let filename = system("find . -name '*".note_id.".md'")
         execute "edit ".filename
+        return 0
+    endif
+
+    " if you can't find an ID, search for a hashtag in the current line
+    let tag = matchstr(getline('.'), '#\S\+')
+    if tag != ""
+        execute "vimgrep /" . tag . "/j *"
+        execute "copen"
+        return 0
     endif
 endfunction
-
-"a hint for future KB functions
-"let note_id = expand("<cword>")
