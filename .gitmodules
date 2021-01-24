@@ -22,3 +22,6 @@
 [submodule "bundle/html_annoyance"]
 	path = bundle/html_annoyance
 	url = git://github.com/tudorprodan/html_annoyance.vim.git
+[submodule "bundle/gruvbox"]
+	path = bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

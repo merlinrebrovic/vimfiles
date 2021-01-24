@@ -25,7 +25,8 @@ set linebreak " won't split a word
 
 set encoding=utf-8
 set t_Co=256
-colorscheme ir_black
+colorscheme gruvbox
+set background=dark
 set number
 set title
 set showcmd
