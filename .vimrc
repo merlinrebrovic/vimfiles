@@ -31,13 +31,6 @@ set number
 set title
 set showcmd
 
-let mapleader = ","
-nnoremap <silent> <Leader><Space> :noh<Cr>
-nnoremap <Leader>c :CtrlP<Cr>
-inoremap jj <Esc>
-" save file
-nnoremap <Leader>s :w<Cr>
-
 " most common vertical movement in wrapped lines
 " for other commands, prepend 'g' ex. g$
 nnoremap j gj
@@ -45,22 +38,24 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" buffers
+inoremap jj <Esc>
+
+" buffers and clipboards
 nnoremap <C-N> :bnext<Cr>
-
-nnoremap <F2> :call BlogPost()<Cr>
-" run a spellchecker
-nnoremap <F3> :call SetSpell()<Cr>
-nnoremap <F4> :call SetFoldMethod()<Cr>
-nmap <leader>m <Plug>FocusModeToggle
-
-" Knowledge Base (KB) function calls
-nnoremap <leader>g :call KBFollowLink()<Cr>
-
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>v :source $MYVIMRC<cr>
-" easy copy to clipboard from Vim
 vnoremap Y "+y
+
+let mapleader = ","
+nnoremap <silent> <Leader><Space> :noh<Cr>
+nnoremap <Leader>c :CtrlP<Cr>
+nnoremap <Leader>s :w<Cr>
+
+nnoremap <F1>       :call BlogPost()<Cr>
+nnoremap <F3>       :call SetSpell()<Cr>
+nnoremap <F4>       :call SetFoldMethod()<Cr>
+nmap     <leader>c  <Plug>FocusModeToggle
+nnoremap <leader>m  :call KBFollowLink()<Cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<Cr>
+nnoremap <leader>v  :source $MYVIMRC<Cr>
 
 " my filetypes
 au BufNewFile,BufRead *.j2 setf htmljinja
