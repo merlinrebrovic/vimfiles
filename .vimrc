@@ -119,3 +119,48 @@ function! KBFollowLink()
         return 0
     endif
 endfunction
+
+augroup kbgroup
+    autocmd!
+    if exists("$KB_HOME")
+        execute 'autocmd BufRead,BufNewFile "'.$KB_HOME.'/*" setlocal completefunc=KBComplete'
+    endif
+augroup END
+
+fun! KBComplete(findstart, base)
+    if a:findstart
+        " locate the start of the word
+        let line = getline('.')
+        " is it a tag? #
+        let start = match(line, '#')
+        if start >= 0
+            return start
+        endif
+        " is it an ID? [[
+        let start = match(line, '@')
+        if start >= 0
+            return start
+        endif
+        return -3 " Negative return values: -3 To cancel silently and leave completion mode.
+    else
+        if a:base =~ '@' " match note IDs ...
+            " match excluding the @ character and match anywhere in the line
+            let matchstring = a:base[1:]
+            let filename = '.noteids'
+        elseif a:base =~ '#' " ... or match tags
+            " match from the beginning including '#'
+            let matchstring = '^' . a:base
+            let filename = '.notetags'
+        else " no match
+            return []
+        endif
+
+        let res = []
+        for line in readfile(filename)
+            if line =~ matchstring
+                call add(res, line)
+            endif
+        endfor
+        return res
+    endif
+endfun
