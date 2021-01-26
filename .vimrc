@@ -137,7 +137,7 @@ augroup kbgroup
     endif
 augroup END
 
-fun! KBComplete(findstart, base)
+function! KBComplete(findstart, base)
     if a:findstart
         " locate the start of the word
         let line = getline('.')
