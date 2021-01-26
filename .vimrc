@@ -116,6 +116,20 @@ function! KBFollowLink()
     endif
 endfunction
 
+function! KBWhatLinksToHere()
+    let note_id = matchstr(expand('%:t'), '\d\{12}')
+    if note_id != ""
+        execute "silent! vimgrep /" . note_id . "/j *.md"
+        if len(getqflist()) != 0
+            execute "copen"
+        else
+            echo "No other notes link to this note."
+        endif
+    else
+        echo "Can't find the note ID in the name of the file."
+    endif
+endfun
+
 augroup kbgroup
     autocmd!
     if exists("$KB_HOME")
