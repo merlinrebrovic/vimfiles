@@ -133,7 +133,7 @@ endfun
 augroup kbgroup
     autocmd!
     if exists("$KB_HOME")
-        execute 'autocmd BufRead,BufNewFile "'.$KB_HOME.'/*" setlocal completefunc=KBComplete'
+        execute 'autocmd BufRead,BufNewFile '.fnameescape($KB_HOME).'/* setlocal completefunc=KBComplete'
     endif
 augroup END
 
