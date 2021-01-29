@@ -8,7 +8,7 @@ filetype plugin indent on
 " default swap file location
 set directory=~/tmp//,.
 
-" identation
+" indentation
 set autoindent
 set tabstop=4
 set shiftwidth=4
