@@ -24,12 +24,16 @@ set showmatch " quickly jump cursor to matching bracket
 set linebreak " won't split a word
 
 set encoding=utf-8
-set t_Co=256
-colorscheme gruvbox
-set background=dark
 set number
 set title
 set showcmd
+
+" the colorscheme section
+set t_Co=256
+colorscheme gruvbox
+" https://github.com/morhetz/gruvbox/issues/175
+let g:gruvbox_guisp_fallback = "bg"
+set background=dark
 
 " most common vertical movement in wrapped lines
 " for other commands, prepend 'g' ex. g$
