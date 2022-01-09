@@ -6,7 +6,7 @@ call pathogen#infect()
 filetype plugin indent on
 
 " default swap file location
-set directory=~/tmp//,.
+set directory=~/.tmp//,.
 
 " indentation
 set autoindent
