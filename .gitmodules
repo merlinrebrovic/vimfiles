@@ -1,24 +1,24 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
-	url = git://github.com/tpope/vim-repeat.git
+	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/commentary"]
 	path = bundle/commentary
-	url = git://github.com/tpope/vim-commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule "bundle/surround"]
 	path = bundle/surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
-	url = git://github.com/tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
 [submodule "bundle/focus"]
 	path = bundle/focus
-	url = git://github.com/merlinrebrovic/focus.vim.git
+	url = https://github.com/merlinrebrovic/focus.vim.git
 [submodule "bundle/html_annoyance"]
 	path = bundle/html_annoyance
-	url = git://github.com/tudorprodan/html_annoyance.vim.git
+	url = https://github.com/tudorprodan/html_annoyance.vim.git
 [submodule "bundle/gruvbox"]
 	path = bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
