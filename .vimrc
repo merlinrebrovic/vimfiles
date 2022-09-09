@@ -33,7 +33,11 @@ set t_Co=256
 colorscheme gruvbox
 " https://github.com/morhetz/gruvbox/issues/175
 let g:gruvbox_guisp_fallback = "bg"
-set background=dark
+if filereadable(expand("~/.config/prefer-light-color-scheme"))
+    set background=light
+else
+    set background=dark
+endif
 
 " most common vertical movement in wrapped lines
 " for other commands, prepend 'g' ex. g$
